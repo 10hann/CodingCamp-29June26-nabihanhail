@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="To-Do List Life Dashboard - A lightweight web app combining task management, Pomodoro timer, quick links, and personalized greetings">
+  <title>To-Do List Life Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app" class="app-container">
+    <!-- Header -->
+    <header id="app-header" class="app-header">
+      <div id="greeting-container" class="greeting-container">
+        <div id="greeting-message" class="greeting-message">Good Morning</div>
+        <div id="greeting-date" class="greeting-date">Loading...</div>
+        <div id="greeting-time" class="greeting-time">--:--</div>
+      </div>
+      
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+          <span class="theme-icon">☀️</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="app-main" class="app-main">
+      <!-- Pomodoro Timer Section -->
+      <section id="timer-section" class="section timer-section">
+        <h2>Focus Timer</h2>
+        <div id="timer-container" class="timer-container">
+          <div id="timer-display" class="timer-display">25:00</div>
+          <div class="timer-controls">
+            <button id="timer-start" class="btn btn-primary">Start</button>
+            <button id="timer-stop" class="btn btn-secondary">Stop</button>
+            <button id="timer-reset" class="btn btn-secondary">Reset</button>
+          </div>
+          <div class="timer-settings">
+            <label for="timer-duration">Duration (minutes):</label>
+            <input id="timer-duration" type="number" min="1" max="60" value="25" class="input">
+          </div>
+        </div>
+      </section>
+
+      <!-- Task Manager Section -->
+      <section id="task-section" class="section task-section">
+        <h2>My Tasks</h2>
+        <div class="task-input-container">
+          <input id="task-input" type="text" placeholder="Add a new task..." class="input" aria-label="New task description">
+          <button id="task-add-btn" class="btn btn-primary">Add Task</button>
+        </div>
+        <div id="task-list" class="task-list">
+          <!-- Tasks will be rendered here -->
+        </div>
+      </section>
+
+      <!-- Quick Links Section -->
+      <section id="quick-links-section" class="section quick-links-section">
+        <h2>Quick Links</h2>
+        <div class="link-input-container">
+          <input id="link-title" type="text" placeholder="Link title" class="input" aria-label="Quick link title">
+          <input id="link-url" type="url" placeholder="https://example.com" class="input" aria-label="Quick link URL">
+          <button id="link-add-btn" class="btn btn-primary">Add Link</button>
+        </div>
+        <div id="quick-links-container" class="quick-links-container">
+          <!-- Quick links will be rendered here -->
+        </div>
+      </section>
+    </main>
+
+    <!-- Settings Panel -->
+    <aside id="settings-panel" class="settings-panel">
+      <div class="settings-header">
+        <h3>Settings</h3>
+        <button id="settings-close" class="btn-close" aria-label="Close settings">✕</button>
+      </div>
+      <div class="settings-content">
+        <div class="setting-item">
+          <label for="user-name-input">Your Name:</label>
+          <input id="user-name-input" type="text" placeholder="Enter your name" class="input" maxlength="50">
+          <button id="user-name-save" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Notifications -->
+    <div id="notification-container" class="notification-container" role="status" aria-live="polite">
+      <!-- Notifications will be shown here -->
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
